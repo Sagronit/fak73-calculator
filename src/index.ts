@@ -1,6 +1,7 @@
 import { Hono } from "hono";
 import * as os from "os";
 import { calculator } from "./routes/calculator";
+import { abbort } from "./routes/ending";
 
 const app = new Hono();
 let state = 0;
@@ -13,6 +14,7 @@ app.get("/2", (c) => {
 });
 
 app.route("/calc", calculator);
+app.route("/abbort", abbort);
 export default {
   fetch: app.fetch,
   port: 8080,
