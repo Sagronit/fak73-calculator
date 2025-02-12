@@ -8,6 +8,9 @@ let state = 0;
 app.get("/", (c) => {
   return c.text(`Hello from: ${os.hostname()}`);
 });
+app.get("/2", (c) => {
+  return c.text("Hello From the Other Side");
+});
 
 app.route("/calc", calculator);
 export default {
